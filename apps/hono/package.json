@@ -1,17 +1,27 @@
 {
-  "name": "hono",
+  "name": "api",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "db:push": "drizzle-kit push:sqlite --config drizzle.config.ts",
+    "db:generate": "drizzle-kit generate:sqlite --config drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config drizzle.config.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.11.0",
+    "better-sqlite3": "^9.5.0",
+    "drizzle-orm": "^0.30.9",
     "hono": "^4.2.7"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@types/better-sqlite3": "^7.6.10",
+    "drizzle-kit": "^0.20.17",
     "tsx": "^4.7.2"
   }
 }

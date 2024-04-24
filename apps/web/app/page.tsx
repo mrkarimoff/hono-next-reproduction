@@ -1,5 +1,5 @@
 import { hc } from "hono/client";
-import { AppType } from "../../hono/src/index";
+import { AppType } from "api";
 
 const client = hc<AppType>("http://localhost:8787");
 
