@@ -13,6 +13,8 @@
     "db:studio": "drizzle-kit studio --config drizzle.config.ts"
   },
   "dependencies": {
+    "@clerk/backend": "^1.0.1",
+    "@hono/clerk-auth": "^1.0.3",
     "@hono/node-server": "^1.11.0",
     "@libsql/client": "^0.6.0",
     "better-sqlite3": "^9.5.0",
