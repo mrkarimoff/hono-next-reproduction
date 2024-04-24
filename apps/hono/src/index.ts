@@ -1,14 +1,13 @@
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import { db } from "../db";
+import usersRoute from "./routes/users";
+import todosRoute from "./routes/todos";
 
-const app = new Hono().get("/", async (c) => {
-  const result = await db.query.users.findMany();
+const app = new Hono();
 
-  return c.json(result);
-});
+const routes = app.route("/users", usersRoute).route("/todos", todosRoute);
 
-export type AppType = typeof app;
+export type AppType = typeof routes;
 
 const port = 8787;
 console.log(`Server is running on port ${port}`);

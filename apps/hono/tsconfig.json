@@ -1,0 +1,9 @@
+{
+  "extends": "@repo/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "jsxImportSource": "hono/jsx",
+  "include": ["."],
+  "exclude": ["node_modules"]
+}
