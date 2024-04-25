@@ -27,7 +27,7 @@ const routes = app.route("/users", usersRoute).route("/todos", todosRoute);
 export type AppType = typeof routes;
 
 const port = 8787;
-console.log(`Server is running on port ${port}`);
+console.log(`Server is running on http://localhost:${port}`);
 
 serve({
   fetch: app.fetch,
