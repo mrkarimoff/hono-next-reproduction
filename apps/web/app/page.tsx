@@ -1,9 +1,9 @@
-import client from "~/honoClient";
+import Container from "~/components/Container";
 
 export default async function Home() {
   return (
-    <div>
+    <Container>
       <h1>Home Page</h1>
-    </div>
+    </Container>
   );
 }
