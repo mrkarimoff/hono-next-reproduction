@@ -3,10 +3,14 @@ import { Hono } from "hono";
 import usersRoute from "./routes/users";
 import todosRoute from "./routes/todos";
 import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
+import { cors } from "hono/cors";
 
 const app = new Hono();
 
 app.use("*", clerkMiddleware());
+
+app.use("*", cors());
+
 app.get("/", (c) => {
   const auth = getAuth(c);
 
