@@ -1,17 +1,9 @@
-"use client";
-
 import { useAuth } from "@clerk/nextjs";
 import { useState } from "react";
 import { Button } from "~/components/ui/button";
 import fetchUsers from "~/lib/fetchUsers";
 
-type User = {
-  id: string;
-  name: string;
-  age: string;
-};
-
-const UserList = () => {
+const TeamsList = () => {
   const [users, setUsers] = useState<User[]>([]);
   const { getToken } = useAuth();
 
@@ -44,4 +36,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default TeamsList;

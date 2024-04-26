@@ -1,9 +1,8 @@
+import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
-import usersRoute from "./routes/users";
-import todosRoute from "./routes/todos";
-import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
 import { cors } from "hono/cors";
+import usersRoute from "./routes/users";
 
 const app = new Hono();
 
@@ -26,7 +25,7 @@ app.get("/", (c) => {
   });
 });
 
-const routes = app.route("/users", usersRoute).route("/todos", todosRoute);
+const routes = app.route("/users", usersRoute);
 
 export type AppType = typeof routes;
 
