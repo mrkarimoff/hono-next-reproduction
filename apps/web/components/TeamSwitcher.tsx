@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { useState } from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
 
 import { cn } from "~/lib/utils";
@@ -31,8 +31,8 @@ const teams = [
 ];
 
 export default function TeamSwitcher() {
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
